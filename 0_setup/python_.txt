@@ -1,0 +1,27 @@
+# Download: https://www.python.org/downloads/
+	python-X.Y.Z-amd64.exe
+
+# Install at:
+	C:\pythonXYZ
+
+setp.bat
+
+## Alternatively:  Add path to Windows
+spa.exe
+	PATH   ...
+	    C:\pythonXYZ
+	    C:\pythonXYZ\Scripts\
+
+python -V
+python hello.py
+python
+
+# pip:
+pip list
+pip install <abc>
+
+
+
+		
+
+

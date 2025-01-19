@@ -1,0 +1,26 @@
+21. Register Infura.
+	https://infura.io/
+   Save password and URL for sepolia.
+
+2. Register Getblock.
+	https://getblock.io/
+   Save key api.
+
+3. Register Molalis.
+	https://admin.moralis.io/register
+   Save key api.
+
+4. Register Tatum.
+	http://tatum.io
+   Save key api.
+
+5. Install Metamask in Chrome.
+    	https://metamask.io/download/
+   Create a account and save password.
+
+   Get SepoliaETH from sepolia faucet to your account:
+	https://sepoliafaucet.com/
+
+6. Register pinata.cloud
+	Register and Login.
+   Save user name and password.

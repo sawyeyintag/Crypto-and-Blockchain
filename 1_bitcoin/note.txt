@@ -1,0 +1,59 @@
+# Download: https://bitcoin.org/en/download
+	bitcoin-x.y.z-win64.exe
+
+# Install at:
+	C:\mycrypto\etc\Bitcoin
+setp.bat
+
+bitcoind --version
+bitcoind --help
+
+# Start Bitcoin Daemon
+bitcoind 	## Connect to -mainnet by default.
+
+# By default Bitcoin Daemon downloads Blockchian from 'main' net,
+ and stored the Blockchian at:
+	C:\Users\<USER>\AppData\Roaming\Bitcoin\blocksnet
+Bitcoin Daemon opens ports:
+ 8333 for Blockchian protocol to communicate with peers.
+ 8332 for HTTP protocol to provide Blockchian services.   
+
+# Bitcoin Clent:  C:\mycrypto\etc\Bitcoin\daemon
+It allows using command line to connect to 127.0.0.1:8332.
+bitcoin-cli help
+bitcoin-cli getblockchaininfo
+bitcoin-cli getblockcount
+bitcoin-cli getblockhash 0
+bitcoin-cli stop
+Transaction services would not started until the entire Blockchian is downloaded.
+But downloading 'main' net Blockchian takes unacceptable long.
+
+#--------------------------------------------------------------
+# 'testnet' is a Bicoin Blockchain designed for testing.
+# It has own set of rules and currency(tBTC) which has no values. 
+# Testnet is occasionally reset, results in losing existing coins.
+# tBTC is freely available from Bicoin Testnet faucets.
+# But getting some tBTC is very hard nowaday. 
+# Bitcoin Testnet Faucet:  https://bitcoinfaucet.uo1.net/
+bitcoind -testnet
+# The testnet3 Blockchian is stored at:
+	C:\Users\<USER>\AppData\Roaming\Bitcoin\testnet3\blocks
+bitcoin-cli -testnet getblockchaininfo
+
+#--------------------------------------------------------------
+# 'regtest' is a private Bicoin blockchain designed for developers.
+# It has basic rules as testnet but no connections to any peers.
+# To start Bicoin Deamon with a private blockchain for testing.
+bitcoind -regtest
+# The regtest Blockchian is stored at:
+	C:\Users\<USER>\AppData\Roaming\Bitcoin\blocks
+# The blockchain is initially  empty.
+# regtest opens port: 18443(HTTP) and 18444(Blockchain).
+netstat -an | findstr 18443
+
+bitcoin-cli -regtest getblockchaininfo
+bitcoin-cli -regtest getnetworkinfo
+bitcoin-cli -regtest getblockcount
+bitcoin-cli -regtest getblockhash 0
+bitcoin-cli -regtest stop
+
