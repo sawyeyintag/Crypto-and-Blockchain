@@ -1,0 +1,31 @@
+# Metamask is a browser extension that provides wallet
+and accessing Bitcoin/Ethereum chains.
+
+- Install the extension in Chrome.
+    https://metamask.io/download/
+
+- Enable Test network.
+    Setting -> Advanced -> Show test network
+
+There is Account 1 created, if not try:
+  (Big upper right Circle)
+	Create account
+
+- Connect To (Blue Dot)
+    Sepolia test network
+
+- (...)
+    Connected sites
+	Manually connect to current site
+	     Connect
+
+- (Circle)
+     Setting -> Network
+
+
+-  Block explorer URL
+	https://sepolia.etherscan.io
+
+- SepoliaETH faucets:
+	https://sepoliafaucet.com/
+

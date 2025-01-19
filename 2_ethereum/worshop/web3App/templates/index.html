@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="/static/lib/prototype-1.6.0.2.js" ></script>
+<script>
+function gasprice() {
+    new Ajax.Request("/getgasprice",
+        { method: "get",
+          onSuccess: (res) =>
+            { output.innerHTML = res.responseText }
+        }
+     )
+}
+</script>
+</head>
+
+<body>
+<a href="getversion">Get Version</a> <p/>
+
+<form action="/getbalance" method="POST">
+Address <input type="text" name="addr" value="0x16c25A4cb42906a367Cce89043f3e39F9f892eb0"/>
+<input type="submit" value="Get Balance "/>
+</form>
+
+<button onclick="gasprice()">Gas Price</button> <p/>
+<p/>
+<div id="output"/>
+
+</body>
+</html>

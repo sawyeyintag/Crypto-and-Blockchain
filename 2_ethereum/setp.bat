@@ -1,0 +1,1 @@
+set PATH=%PATH%;C:\mycrypto\etc\Geth;C:\mycrypto\etc\Foundry

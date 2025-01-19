@@ -1,0 +1,53 @@
+# Download: https://geth.ethereum.org/downloads/
+	       geth-windows-amd64-x.y.z-.zip
+# Alternative: Openethereum and Netherlands.
+
+# Unzip to:
+	C:\mycrypto\etc\Geth
+
+# Set Path: setp.bat
+	set PATH=C:\mycrypto\etc\Geth
+
+https://geth.ethereum.org/docs/interface/command-line-options
+geth version
+geth help
+
+Start Geth Node:
+geth
+# Default data dir:
+	C:\Users\THAIMART\AppData\Local\Ethereum
+
+# Define data directory:  (e.g. in working directory)
+geth --datadir "./Ethereum"
+
+# Ethereum Testnet: Some are no longer allow public free uses.
+--sepolia, proof-of-stake(PoS)
+--goerli, proof-of-authority(PoA)
+# Deprecated Testnets: rinkeby, ropsten, kovan 
+
+# Start Geth with connection to sepolia.
+geth --datadir "./Ethereum" --sepolia
+# C:\Users\THAIMART\AppData\Local\Ethereum\sepolia
+
+# geth Options:
+To enable Http server:  --http		Default: 8545
+To define port:  	--http.port <port>
+To enable APIS:  	--http.api <package list>
+To enable access from any domains: --http.corsdomain '*' .
+To enable access from remix: --http.corsdomain https://remix.ethereum.org
+
+## Start Geth:
+start_geth.bat
+geth --datadir "./Ethereum" --sepolia --http --http.api personal,eth,net,web3,admin,miner
+
+## Geth provides Javascript command services at port 8545.
+## https://geth.ethereum.org/docs/rpc/ns-eth
+geth attach http://127.0.0.1:8545
+web3.version
+admin.nodeInfo
+net.peerCount
+eth.blockNumber   (not untill catch up completed).
+exit
+
+## Geth supports json_rpc(2_jsonrpc.py) and web3(3_web3py.py).
+

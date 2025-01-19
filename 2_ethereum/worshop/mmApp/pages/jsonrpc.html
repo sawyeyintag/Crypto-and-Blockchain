@@ -1,0 +1,46 @@
+<html>
+<head>
+<script>
+/* Metamask extension provides 'ethereum' object for json-rpc. <p/>
+Metamask supports json-rpc of the form:
+{
+    "jsonrpc": 2.0,
+    "method": method,
+    "params": [params],
+    "id": id
+}
+https://metamask.github.io/api-playground/api-documentation/
+*/
+
+async function chain_id() {
+   // All requests must be asynchronous.
+   // 'async' functions in HTML script must be top-most level.
+   output.innerHTML = await ethereum.request(
+		{ method: 'eth_chainId' })
+}
+
+// Handles its own requests asynchronously.
+function rpc(met) { // Handle methods with no parameters only.
+   ethereum
+      .request({ method: met })
+      .then((res) => { output.innerHTML = res })
+}
+
+</script>
+</head>
+
+<body>
+Metamask support json rpc, but not all methods. <p/>
+<button onclick="chain_id()">Chain Id</button>
+<button onclick="rpc('net_listening')">Is Listening</button>
+<button onclick="rpc('net_peerCount')">Peer Count</button>
+<button onclick="rpc('web3_clientVersion')">Web3 Client Version</button>
+<p/>
+<button onclick="rpc('eth_gasPrice')">Gas Price</button>
+<button onclick="rpc('eth_mining')">Is Mining</button>
+<button onclick="rpc('eth_syncing')">Is Syncing</button>
+<button onclick="rpc('eth_blockNumber')">Most Recent Block</button>
+
+<div id="output"/>
+</body>
+</html>

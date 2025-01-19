@@ -1,0 +1,42 @@
+<html>
+<head>
+<!--
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+-->
+<script src="/lib/web3.min.js"></script>
+<script>
+function loadWeb3() {
+    if (window.ethereum) {
+        window.web3 = new Web3(window.ethereum)
+        window.ethereum.enable().then(() => {
+	    output.innerHTML = 'Ready!'
+        })
+    } else {
+        output.innerHTML = 'No Metamask!'
+    }
+}
+</script>
+</head>
+
+<body>
+<button onclick="loadWeb3()">Load Web3</button> <p/> 
+
+<button onclick="version()">Version</button> <p/>
+<script>
+function version() {
+   output.innerHTML = window.web3.version
+}
+</script>
+
+<button onclick="get_gas_price()">Get GasPrice</button> <p/>
+<script>
+function get_gas_price() {
+    window.web3.eth.getGasPrice().then((res) => {
+        output.innerHTML = res
+    })
+}
+</script>
+
+<div id="output"/>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<body>
+<button onclick="detect()">Detect Metamask</button> <p/>
+<script>
+function detect() {
+   // Browsers with Metamask installed would have window.ethereum predefined.
+   if (typeof window.ethereum !== 'undefined') {
+      output.innerHTML = 'MetaMask is installed.'
+   } else {
+      output.innerHTML = 'Not installed.'
+   }
+}
+</script>
+
+<button onclick="is_connect()">Is connect</button> <p/>
+<script>
+function is_connect() {
+   output.innerHTML =  ethereum.isConnected()
+}
+</script>
+
+<button onclick="connect()">Connect to Metamask</button> <p/>
+<script>
+function connect() {
+   ethereum.request({ method: 'eth_requestAccounts' })
+}
+</script>
+
+<div id="output"/>
+</body>
+</html>
